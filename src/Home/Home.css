@@ -55,3 +55,56 @@
     background-color: #f38b84;
     color: #E4A9A5;
 }
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.button-generate-recipe, .button-others-ingredients{
+    border: none;
+    border-radius: 5px;
+    color: #EA392C;
+    font-weight: bolder;
+    background-color: #E4A9A5;
+    font-size: 15px;
+    cursor: pointer;
+    width: 170px;
+    height: 40px;
+    filter: drop-shadow(3px, 5px, 5px rgba(0,0,0,0.4));
+}
+
+.button-generate-recipe{
+    margin: 10px;
+    width: 170px;
+    height: 40px;
+}
+
+.button-generate-recipe:hover, .button-others-ingredients:hover{
+    background-color: #f38b84;
+    color: #E4A9A5;
+}
+.button-start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-image{
+    margin-top: 10%;
+    width: 15%;
+    height: 15%;
+}
+
+.image-container{
+    margin-top:20px;
+}
+
