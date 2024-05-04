@@ -2,7 +2,8 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 5px;
+    margin-top: 2%;
 }
 
 .recipe-container {
@@ -41,23 +42,11 @@
     border-radius: 5px;
     margin-left: 400px;
 }
-
-/* .recipe-container::-webkit-scrollbar{
-    width: 10px;
-    margin-left: 400px;
+.title-recipe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-.recipe-container::-webkit-scrollbar-thumb {
-    background-color: #2e1a1a;
-    border-radius: 5px;
-    margin-left: 400px;
-}
-
-.recipe-container::-webkit-scrollbar-track {
-    background-color: #f2b7b7;
-    border-radius: 5px;
-    margin-left: 400px;
-} */
 
 .title-recipes {
     color: #EA392C;

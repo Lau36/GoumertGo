@@ -56,6 +56,10 @@ function Home() {
     setCurrentRecipeIndex((prevIndex) => prevIndex + 1);
   };
 
+  const prevRecipe = () => {
+    setCurrentRecipeIndex((prevIndex) => prevIndex - 1);
+  };
+
   return (
     <>
       <Navbar />
@@ -65,6 +69,11 @@ function Home() {
         <>
           <Recipes recipes={recipes[currentRecipeIndex]} />
           <div className="buttons">
+            {currentRecipeIndex > 0 && (
+              <button className="button-generate-recipe" onClick={prevRecipe}>
+                Receta anterior
+              </button>
+            )}
             {currentRecipeIndex < recipes.length - 1 && (
               <button
                 className="button-generate-recipe"
@@ -73,12 +82,14 @@ function Home() {
                 Generar otra receta
               </button>
             )}
-            <button
-              className="button-others-ingredients"
-              onClick={ingredientsPage}
-            >
-              Nuevos ingredientes
-            </button>
+            {currentRecipeIndex === recipes.length - 1 && (
+              <button
+                className="button-others-ingredients"
+                onClick={ingredientsPage}
+              >
+                Nuevos ingredientes
+              </button>
+            )}
           </div>
         </>
       ) : (
@@ -89,7 +100,7 @@ function Home() {
             </div>
             <div className="Input-Container">
               <textarea
-                rows="9"
+                rows="4"
                 type="text"
                 className="Input"
                 placeholder="Tomate, Cebolla"
