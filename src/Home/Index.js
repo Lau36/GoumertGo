@@ -3,7 +3,6 @@ import { getRecipe } from "../Service/Ingredients";
 import Navbar from "../Components/Navbar";
 import Swal from "sweetalert2";
 import Recipes from "../Components/Recipes";
-import logo from "../Resources/iconPage.png";
 import "./Home.css";
 import LoadingPage from "../Components/LoadingPage";
 
@@ -60,7 +59,6 @@ function Home() {
   return (
     <>
       <Navbar />
-
       {loading ? (
         <LoadingPage />
       ) : recipePage ? (
