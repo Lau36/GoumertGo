@@ -86,3 +86,25 @@
     background-color: #f38b84;
     color: #E4A9A5;
 }
+.button-start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-image{
+    margin-top: 10%;
+    width: 15%;
+    height: 15%;
+}
+
+.image-container{
+    margin-top:20px;
+}
+
