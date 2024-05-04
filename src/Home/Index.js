@@ -25,18 +25,19 @@ function Home() {
   const handleSubmit = (e) => {
     setLoading(true);
     e.preventDefault();
+
     const ingredientsList = ingredients
       .split(",")
       .map((ingredient) => ingredient.trim());
+
     const data = {
       ingredients: ingredientsList,
     };
-    console.log("los ingredientes", data);
+
     getRecipe(data).then((response) => {
       try {
         setLoading(false);
         if (response.length !== 0) {
-          console.log("Estos son los ingredientes", response);
           setRecipes(response);
           setRecipePage(true);
         } else {
@@ -47,13 +48,21 @@ function Home() {
           });
         }
       } catch (error) {
-        console.log("Ocurrio un erro al mandar los ingredientes :(", error);
+        Swal.fire({
+          icon: "error",
+          title: "Ocurrió un error al enviar los ingredientes",
+          text: "Al parecer ocurrió algo con el servidor",
+        });
       }
     });
   };
 
   const generateNextRecipe = () => {
     setCurrentRecipeIndex((prevIndex) => prevIndex + 1);
+  };
+
+  const prevRecipe = () => {
+    setCurrentRecipeIndex((prevIndex) => prevIndex - 1);
   };
 
   return (
@@ -65,6 +74,11 @@ function Home() {
         <>
           <Recipes recipes={recipes[currentRecipeIndex]} />
           <div className="buttons">
+            {currentRecipeIndex > 0 && (
+              <button className="button-generate-recipe" onClick={prevRecipe}>
+                Receta anterior
+              </button>
+            )}
             {currentRecipeIndex < recipes.length - 1 && (
               <button
                 className="button-generate-recipe"
@@ -73,12 +87,14 @@ function Home() {
                 Generar otra receta
               </button>
             )}
-            <button
-              className="button-others-ingredients"
-              onClick={ingredientsPage}
-            >
-              Nuevos ingredientes
-            </button>
+            {currentRecipeIndex === recipes.length - 1 && (
+              <button
+                className="button-others-ingredients"
+                onClick={ingredientsPage}
+              >
+                Nuevos ingredientes
+              </button>
+            )}
           </div>
         </>
       ) : (
@@ -89,7 +105,7 @@ function Home() {
             </div>
             <div className="Input-Container">
               <textarea
-                rows="9"
+                rows="4"
                 type="text"
                 className="Input"
                 placeholder="Tomate, Cebolla"

@@ -9,7 +9,7 @@ function LoadingPage() {
       <div className="logoContainer">
         <Lottie animationData={loadingAnimation} />
       </div>
-      <div class="spinner1">
+      <div className="spinner1">
         <span>G</span>
         <span>E</span>
         <span>N</span>
@@ -20,7 +20,7 @@ function LoadingPage() {
         <span>D</span>
         <span>O</span>
       </div>
-      <div class="spinner2">
+      <div className="spinner2">
         <span>R</span>
         <span>E</span>
         <span>C</span>
